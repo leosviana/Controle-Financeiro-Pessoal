@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(100, 243, 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form{
+    width: 300px;
+}
+
+input{
+    border: none;
+}
+
+input, button{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: -webkit-fill-available; /* AUMENTAR CAMPOS PARA O ESPAÇO TOTAL DISPONÍVEL */
+}
+
+button{
+    cursor: pointer;    
+}
+
+button:active{
+    opacity: 0.8;
+}
+
+button[disabled]{
+    opacity: 0.2;
+}
+
+.btRecuperarSenha{
+    color: white;
+    background: transparent;
+    border: none;
+}
+
+.btEntrar{
+    color:rgb(100, 243, 100);
+    background: white;
+    border: none;
+}
+
+.btRegistrar{
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
