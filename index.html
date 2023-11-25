@@ -19,13 +19,13 @@
             <div><label>senha: </label></div>
         </div>
         <div>
-            <input type="password" name="senha" id="senha" placeholder="Senha"/>
+            <input type="password" name="senha" id="senha" onchange="validateFields()" placeholder="Senha"/>
         </div>        
         <div>
             <button type="button" class="btRecuperarSenha" disabled="true">Recuperar senha</button>
         </div>
         <div>
-            <button type="button" class="btEntrar" disabled="true">Entrar</button>
+            <button type="button" class="btEntrar" id="btEntrar" disabled="true">Entrar</button>
         </div>
         <div>
             <button type="button" class="btRegistrar">Registrar</button>
@@ -35,7 +35,6 @@
                input = Enviar os dados para outra página
                reset = Resetar informações dos campos
         -->
-
     </form>
 
     <script src="./src/js/index.js"></script>
