@@ -1,14 +1,10 @@
 
 function validateFields(){
     const emailValid = isEmailValid();
-    document.getElementById('btRecuperarSenha').disabled = !emailValid; // Desabilita quando for inválido
+    document.getElementById("btRecuperarSenha").disabled = !emailValid; // Desabilita quando for inválido
     // Verificar se o email não é vazio e se o email é valido
     // se verdadeiro, entao habilita o botão de recuperar senha
     // se falso, entao desabilita o botão de recuperar senha    
-}
-
-function validateEmail(email){ // Verifica se o campo email é válido
-    return /\S+@\S+\.\S+/.test(email);
 }
 
 function isEmailValid(){ // Validar email
@@ -19,6 +15,14 @@ function isEmailValid(){ // Validar email
     return validateEmail(email); 
 }
 
+function validateEmail(email){ // Verifica se o campo email é válido
+    var parametro = /\S+@\S+\.\S+/;
+    return parametro.test(email);
+    // texto@texto.com -> true
+    // texto@texto     -> false
+    // texto.com       -> false
+    // texto           -> false
+}
 
 
 
