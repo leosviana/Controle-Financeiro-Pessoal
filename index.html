@@ -13,13 +13,16 @@
             <div><label>e-mail: </label></div>
         </div>
         <div>
-            <input type="email" name="email" id="email" onchange="validateFields()" placeholder="seu@email.com"/>
+            <input type="email" name="email" id="email" onchange="onChangeEmail()" placeholder="seu@email.com"/>
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é inválido</div>
         </div>
         <div>
             <div><label>senha: </label></div>
         </div>
         <div>
-            <input type="password" name="senha" id="senha" onchange="validateFields()" placeholder="Senha"/>
+            <input type="password" name="senha" id="senha" onchange="onChangePassword()" placeholder="Senha"/>
+            <div class="error" id="password-required-error">Senha é obrigatório</div>
         </div>        
         <div>
             <button type="button" class="btRecuperarSenha" disabled="true">Recuperar senha</button>
