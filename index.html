@@ -6,21 +6,18 @@
     <title>Login - Controle Financeiro Pessoal</title>
 
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/global.css">
 </head>
 <body>
     <form>
-        <div>
+        <div class="form-field">
             <div><label>e-mail: </label></div>
-        </div>
-        <div>
             <input type="email" name="email" id="email" onchange="onChangeEmail()" placeholder="seu@email.com"/>
             <div class="error" id="email-required-error">Email é obrigatório</div>
             <div class="error" id="email-invalid-error">Email é inválido</div>
         </div>
-        <div>
+        <div class="form-field">
             <div><label>senha: </label></div>
-        </div>
-        <div>
             <input type="password" name="senha" id="senha" onchange="onChangePassword()" placeholder="Senha"/>
             <div class="error" id="password-required-error">Senha é obrigatório</div>
         </div>        
@@ -28,10 +25,10 @@
             <button type="button" class="btRecuperarSenha" disabled="true">Recuperar senha</button>
         </div>
         <div>
-            <button type="button" class="btEntrar" id="btEntrar" disabled="true">Entrar</button>
+            <button type="button" class="btEntrar" id="btEntrar" disabled="true" onclick="login()">Entrar</button>
         </div>
         <div>
-            <button type="button" class="btRegistrar">Registrar</button>
+            <button type="button" class="btRegistrar" onclick="register()">Registrar</button>
         </div>                
         <!-- TYPE 
                button = Realizar uma ação
@@ -41,6 +38,20 @@
     </form>
 
     <script src="./src/js/index.js"></script>
-    
+    <script src="./src/js/validations.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAxJSBiBrXajXnODFNeVT43kXVVXkwbJoo",
+            authDomain: "controle-de-gastos-9b457.firebaseapp.com",
+            projectId: "controle-de-gastos-9b457",
+            storageBucket: "controle-de-gastos-9b457.appspot.com",
+            messagingSenderId: "642983607237",
+            appId: "1:642983607237:web:057b3c44b1c187d4c829ac"
+        };
+        firebase.initializeApp(firebaseConfig); //Inicializar configuração do Firebase
+
+    </script>
 </body>
 </html>
