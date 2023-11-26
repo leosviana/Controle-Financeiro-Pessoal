@@ -1,0 +1,32 @@
+
+.btRecuperarSenha{ /* Botão recuperar senha */
+    color: white;
+    background: transparent;
+    border: none;
+}
+
+.btEntrar{ /* Botão entrar */
+    color:rgb(100, 243, 100);
+    background: white;
+    border: none;
+}
+
+.btRegistrar{ /* Botão registrar */
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+button:active{ /* Botão pressionado */
+    opacity: 0.8;
+}
+
+button[disabled]{ /* Botão desabilitado */
+    opacity: 0.2;
+}
+
+.error{ /* Erros */
+    color: white;
+    background: red;
+    display: none; /* Não exibir em tela */
+}
