@@ -1,4 +1,4 @@
-body{
+body{ /* Corpo da página */
     background-color: rgb(1, 110, 1);
     display: flex;
     justify-content: center;
@@ -6,52 +6,24 @@ body{
     height: 100vh;
 }
 
-form{
+form{ /* Formulario geral */
     width: 300px;
 }
 
-input{
+input{ /* Campos de inserção de texto */
     border: none;
 }
 
-input, button{
+input, button{ /* Campos inserção de texto e botão */
     padding: 10px;
+    width: -webkit-fill-available; /* Aumentar campos para o espaço total disponível */
+}
+
+.form-field{ /* Formulário de alguns campos */ 
     margin-bottom: 10px;
-    width: -webkit-fill-available; /* AUMENTAR CAMPOS PARA O ESPAÇO TOTAL DISPONÍVEL */
 }
 
-button{
-    cursor: pointer;    
-}
-
-button:active{
-    opacity: 0.8;
-}
-
-button[disabled]{
-    opacity: 0.2;
-}
-
-.btRecuperarSenha{
-    color: white;
-    background: transparent;
-    border: none;
-}
-
-.btEntrar{
-    color:rgb(100, 243, 100);
-    background: white;
-    border: none;
-}
-
-.btRegistrar{
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-}
-
-.error{
-    color: white;
-    background: red;
-    display: none; /* Não exibir em tela */
+button{ /* Botoes */
+    cursor: pointer;
+    margin-bottom: 10px;
 }
