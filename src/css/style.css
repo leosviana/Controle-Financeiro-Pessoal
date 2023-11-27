@@ -1,8 +1,5 @@
 body{ /* Corpo da página */
     background-color: rgb(1, 110, 1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
