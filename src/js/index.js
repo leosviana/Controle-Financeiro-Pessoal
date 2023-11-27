@@ -40,6 +40,17 @@ function register(){
     window.location.href = "register.html"; //Ir para a página de registro
 }
 
+function recoverPassword(){
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() =>{
+        hideLoading();
+        alert('Email enviado com sucesso!');
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
+}
+
 function isEmailValid(){ // Validar campo email    
     const email = form.email().value; //verdadeiro
     if(!email){ //Se email é diferente de preenchido
