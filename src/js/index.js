@@ -13,14 +13,18 @@ function login(){
     /*window.location
     console.log('### window', window);*/
 
+    showLoading(); //Exibindo o loading na tela
+
     firebase.auth().signInWithEmailAndPassword( //Função de autenticação de email e senha
         form.email().value, form.senha().value //Verificando valor dos campos de email e senha
         ).then (response => { //Caso seja sucesso
-        console.log('sucess', response);
+        hideLoading(); //Retirando o loading da tela
+        console.log('sucess', response); //Exibir sucesso pelo 'F12' na pagina web
         window.location.href = "home.html"; //Ir para a página principal
     }).catch(error => { //Caso seja erro
+        hideLoading(); //Retirando o loading da tela
         alert(getErrorMessage(error)); //Exibir os erros de login tratados
-        console.log('error', error); 
+        console.log('error', error); //Exibir erro pelo 'F12' na pagina web
     });
 }
 
@@ -32,6 +36,7 @@ function getErrorMessage(error){ //Função de erros de login tratados
 }
 
 function register(){
+    // showLoading();
     window.location.href = "register.html"; //Ir para a página de registro
 }
 
