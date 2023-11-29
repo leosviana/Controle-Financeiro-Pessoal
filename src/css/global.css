@@ -8,6 +8,15 @@ body{
     align-items: center;
 }
 
+.form-field{ /* Formulário de alguns campos */ 
+    margin-bottom: 10px;
+}
+
+input, button{ /* Campos inserção de texto e botão */
+    padding: 10px;
+    width: -webkit-fill-available; /* Aumentar campos para o espaço total disponível */
+}
+
 .loading{
     background: rgba(0, 0, 0, 0.5); /* Digigo 1, 2 e 3 representa a cor preta. Digito 4 representa opacidade */
     position: fixed;
@@ -19,19 +28,19 @@ body{
     font-size: 24px;
 }
 
-.btRecuperarSenha{ /* Botão recuperar senha */
+.clear{ /* Botão limpo */
     color: white;
     background: transparent;
     border: none;
 }
 
-.btEntrar{ /* Botão entrar */
+.solid{ /* Botão solido */
     color:rgb(100, 243, 100);
     background: white;
     border: none;
 }
 
-.btRegistrar{ /* Botão registrar */
+.outline{ /* Botão vazado */
     background: transparent;
     color: white;
     border: 1px solid white;
