@@ -29,8 +29,11 @@ function login(){
 }
 
 function getErrorMessage(error){ //Função de erros de login tratados
-    if (error.code == "auth/invalid-login-credentials"){ //Quando ocorrer esse erro
+    if(error.code == "auth/invalid-login-credentials"){ //Quando ocorrer esse erro
         return "Usuário não encontrado"; //Será retornado essa outra mensagem
+    }
+    if(error.code == "auth/wrong-password"){ //Quando ocorrer esse erro
+        return "Senha inválida"; //Será retornado essa outra mensagem
     }
     return error.message; //Caso não seja os erros acima, será retornado outros erros
 }
