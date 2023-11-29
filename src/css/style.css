@@ -11,15 +11,6 @@ input{ /* Campos de inserção de texto */
     border: none;
 }
 
-input, button{ /* Campos inserção de texto e botão */
-    padding: 10px;
-    width: -webkit-fill-available; /* Aumentar campos para o espaço total disponível */
-}
-
-.form-field{ /* Formulário de alguns campos */ 
-    margin-bottom: 10px;
-}
-
 button{ /* Botoes */
     cursor: pointer;
     margin-bottom: 10px;
