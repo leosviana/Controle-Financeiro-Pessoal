@@ -22,13 +22,13 @@
             <div class="error" id="password-required-error">Senha é obrigatório</div>
         </div>        
         <div>
-            <button type="button" class="btRecuperarSenha" disabled="true" onclick="recoverPassword()">Recuperar senha</button>
+            <button type="button" class="clear" disabled="true" onclick="recoverPassword()">Recuperar senha</button>
         </div>
         <div>
-            <button type="button" class="btEntrar" id="btEntrar" disabled="true" onclick="login()">Entrar</button>
+            <button type="button" class="solid" id="btEntrar" disabled="true" onclick="login()">Entrar</button>
         </div>
         <div>
-            <button type="button" class="btRegistrar" onclick="register()">Registrar</button>
+            <button type="button" class="outline" onclick="register()">Registrar</button>
         </div>                
         <!-- TYPE 
                button = Realizar uma ação
@@ -36,18 +36,17 @@
                reset = Resetar informações dos campos
         -->
     </form>
-
 </body>
 
 
-
+<!-- Referenciando e utilizando os arquivos JAVASCRIPT: -->
 <script src="./src/js/index.js"></script>
 <script src="./src/js/validations.js"></script>
 <script src="./src/js/loading.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
 <script>
-    const firebaseConfig = {
+    const firebaseConfig = { //Copiado informações da aplicação firebase:
         apiKey: "AIzaSyAxJSBiBrXajXnODFNeVT43kXVVXkwbJoo",
         authDomain: "controle-de-gastos-9b457.firebaseapp.com",
         projectId: "controle-de-gastos-9b457",
@@ -56,7 +55,6 @@
         appId: "1:642983607237:web:057b3c44b1c187d4c829ac"
     };
     firebase.initializeApp(firebaseConfig); //Inicializar configuração do Firebase
-
 </script>
 
 </html>
