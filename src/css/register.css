@@ -1,0 +1,17 @@
+body{ /* Corpo da página */
+    background-color: rgb(1, 110, 1);
+    height: 100vh;
+}
+
+form{ /* Formulario geral */
+    width: 300px;
+}
+
+input{ /* Campos de inserção de texto */
+    border: none;
+}
+
+button{ /* Botoes */
+    cursor: pointer;
+    margin-bottom: 10px;
+}
