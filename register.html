@@ -7,30 +7,36 @@
 
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/global.css">
+    <link rel="stylesheet" href="./src/css/register.css">
 </head>
 <body class="centralize">
     <form>
         <div class="form-field">
             <div><label>Email</label></div>
-            <input type="email" placeholder="se@email.com">
+            <input type="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()">
+            <div class="error" id="email-required-error">Email é obrigatório!</div>
+            <div class="error" id="email-invalid-error">Email é inválido!</div>
         </div>
         <div class="form-field">
             <div><label>Senha</label></div>
-            <input type="password" placeholder="Senha">
+            <input type="password" id="password" placeholder="Senha" onchange="onChangePassword()">
+            <div class="error" id="password-required-error">Senha é obrigatória!</div>
+            <div class="error" id="password-min-length-error">Senha deve ter pelo menos 6 caracteres!</div>
         </div>
         <div class="form-field">
             <div><label>Confirmar senha</label></div>
-            <input type="password" placeholder="Confirmar senha">
+            <input type="password" id="confirmPassword" placeholder="Confirmar senha" onchange="onChangeConfirmPassword()">
+            <div class="error" id="password-doesnt-match-error">A Senha e a confirmação da senha devem ser iguais!</div>
         </div>
         <div>
-            <button type="button" class="solid">Registrar</button>
+            <button type="button" id="register-button" class="solid" disable="true" >Registrar</button>
         </div>
         <div>
-            <button type="button" class="clear">Login</button>
+            <button type="button" class="clear" disable="true">Login</button>
         </div>
     </form>
 </body>
-    <script src="./src/js/index.js"></script>
     <script src="./src/js/validations.js"></script>
+    <script src="./src/js/register.js"></script>
 
 </html>
