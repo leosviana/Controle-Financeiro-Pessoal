@@ -54,12 +54,12 @@ function recoverPassword(){
     });
 }
 
-function isEmailValid(){ // Validar campo email    
+function isEmailValid(){ // Validar campo email
     const email = form.email().value; //verdadeiro
     if(!email){ //Se email é diferente de preenchido
-        return false; //Retorna falso       
+        return false; //Retorna falso
     }
-    return validateEmail(email); //retorno verdadeiro ou falso  
+    return validateEmail(email); //retorno verdadeiro ou falso
 }
 
 function toggleEmailErros(){ //Erros do campo email
@@ -118,8 +118,8 @@ const form = { //Função de formulario para encapsular os campos do HTML
     emailRequiresError: () => document.getElementById('email-required-error'),
     emailInvalidError: () => document.getElementById('email-invalid-error'),
     passwordRequiredError: () => document.getElementById('password-required-error'),
-    btRecuperarSenha: () => document.querySelector(".btRecuperarSenha"),
-    btEntrar: () => document.querySelector(".btEntrar")
+    btRecuperarSenha: () => document.getElementById("btRecuperarSenha"),
+    btEntrar: () => document.getElementById("btEntrar")
 }
 
     
