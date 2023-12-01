@@ -29,14 +29,19 @@
             <div class="error" id="password-doesnt-match-error">A Senha e a confirmação da senha devem ser iguais!</div>
         </div>
         <div>
-            <button type="button" id="register-button" class="solid" disable="true">Registrar</button>
+            <button type="button" id="register-button" class="solid" disable="true" onclick="register()">Registrar</button>
         </div>
         <div>
             <button type="button" class="clear" disable="true">Login</button>
         </div>
     </form>
 </body>
-    <script src="./src/js/validations.js"></script>
-    <script src="./src/js/register.js"></script>
+
+<script src="./src/js/validations.js"></script>
+<script src="./src/js/register.js"></script>
+<script src="./src/js/loading.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
+<script src="./src/js/firebase-init.js"></script>
 
 </html>
