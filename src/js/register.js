@@ -3,6 +3,7 @@ function onChangeEmail(){
     const email = form.email().value;
     form.emailRequiredError().style.display = email ? "none" : "block"; // Se email for válido, esconde a mensagem de erro da tela. Se não, exibe a mensagem de erro na tela.
     form.emailInvalidError().style.display = validateEmail(email) ? "none" : "block"; // Se email for válido, esconde a mensagem de erro da tela. Se não, exibe a mensagem de erro na tela.
+    toggleRegisterButtonDisable(); //Botão Registro desabilitado
 }
 
 function onChangePassword(){
@@ -10,10 +11,12 @@ function onChangePassword(){
     form.passwordRequiredError().style.display = password ? "none" : "block";
     form.passwordMinLengthError().style.display = password.length >= 6 ? "none" : "block";
     validatePasswordMatch();
+    toggleRegisterButtonDisable(); //Botão Registro desabilitado
 }
 
 function onChangeConfirmPassword(){
     validatePasswordMatch();
+    toggleRegisterButtonDisable(); //Botão Registro desabilitado
 }
 
 function validatePasswordMatch(){
@@ -24,8 +27,8 @@ function validatePasswordMatch(){
         password == confirmPassword ? "none" : "block";
 }
 
-function toggleRegisterButtonDisable(){
-    form.registerButton().disable = !isFormValid();
+function toggleRegisterButtonDisable(){ //Botão Registro desabilitado
+    form.registerButton().disabled = !isFormValid();
 }
 
 function isFormValid(){ //Validar se o formulário com todos os campos é válido
