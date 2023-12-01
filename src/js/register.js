@@ -1,3 +1,8 @@
+firebase.auth().onAuthStateChanged(user => { //Verifica se ocorre mudança de estado de logado para deslogado
+    if(user){
+        window.location.href="home.html";
+    }
+}) 
 
 function onChangeEmail(){
     const email = form.email().value;

@@ -1,3 +1,9 @@
+firebase.auth().onAuthStateChanged(user => { //Verifica se ocorre mudança de estado de logado para deslogado
+    if(user){
+        window.location.href="home.html";
+    }
+}) 
+
 function onChangeEmail(){ //Ações no campo email   
     toggleButtonsDisable(); //Utilizando a função de validação de botões
     toggleEmailErros(); //Utilizando a função de validação de erros no email
