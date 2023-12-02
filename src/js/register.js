@@ -24,7 +24,6 @@ function onChangeConfirmPassword(){
     toggleRegisterButtonDisable(); //Botão Registro desabilitado
 }
 
-
 function register(){
     showLoading();
 
