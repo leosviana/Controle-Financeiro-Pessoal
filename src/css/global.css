@@ -1,5 +1,6 @@
-body{
+body{ /* Corpo da página */
     margin: 0;
+    background-color: rgb(1, 110, 1);
 }
 
 .centralize{
@@ -52,6 +53,27 @@ button:active{ /* Botão pressionado */
 
 button[disabled]{ /* Botão desabilitado */
     opacity: 0.2;
+}
+
+button.fab{ 
+    width: 54px; /* Largura */
+    height: 54px; /* Altura */
+    border-radius: 50px; /* Borda nas pontas */
+    border: none; /* Sem borda laterais */
+    font-size: 24px; /* Tamanho da fonte */
+    box-shadow: 2px 2px 2px gray; /* Sombra: direita, esquerda, expandir, cor cinza */
+}
+
+button.fab.fixed{
+    position: fixed;
+}
+
+button.fab.bottom{
+    bottom: 32px;
+}
+
+button.fab.right{
+    right: 32px;
 }
 
 .error{ /* Erros */
