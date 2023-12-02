@@ -6,21 +6,38 @@ function logout(){ //Função para realizar logout do usuário
     })
 }
 
-findTransaction(); /* Chamando a função de transação */
+findTransaction(); // Chamando a função de transação 
 
-function findTransaction(){ /* Buscar as transações do backend para o usuário logado */
-    alert(1);
+function findTransaction(){ // Buscar as transações do backend para o usuário logado
     setTimeout(() => {
-        alert(2);
-        addTransactionToScreen(fakeTransations); /* Adicionando transação */
-    }, 1000) /* Carregar 1 segundo */
+        addTransactionToScreen(fakeTransations); // Adicionando transação
+    }, 1000) // Carregar 1 segundo 
 }
 
-function addTransactionToScreen(transactions){ /* Função para adicionar as transações do backend */
+function addTransactionToScreen(transactions){ // Função para adicionar as transações do backend
+    const orderedList = document.getElementById('transactions'); // Chamando a lista ordenada do html 
+
+    transactions.forEach(transaction => { // ARRAY de transações
+        const li = document.createElement('li'); // Criando elemento 'li' (Lista)
+        li.classList.add(transaction.type); //Adicionando tipo de transação ('expense' ou 'income')
+
+        const date = document.createElement('p'); // Criando elemento paragrafo
+        date.innerHTML = transaction.date; /* Adicionando a data */
+        li.appendChild(date); /* Adicionando data como item filho da lista  */
+
+
+        orderedList.appendChild(li); // Adicionando item lista como filho da lista
+    });
+    /* FOREACH é o mesmo que utilizar o laço FOR abaixo, mas de uma forma simplificada
+       for (i=0; i<transactions.lenght; i++) {
+         let transaction = transactions[i];
+       }
+    */
+
 
 }
 
-const fakeTransations = [{ /* ARRAY */
+const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
     type: 'expense',
     date: '2023-01-04',
     money: {
