@@ -1,0 +1,39 @@
+body{ /* Corpo da página */
+    height: 100vh;
+}
+
+header{
+    text-align: right;
+}
+
+header button{
+    width: auto;
+}
+
+ol{
+    list-style-type: none;
+    padding: 0;
+}
+
+ol li{
+    cursor: pointer; /* Exibir mãozinha */
+    background: white; /* Fundo branco */
+    padding: 8px 16px; /* Espaçamento: horizontal, vertical */
+    border-bottom: 1px solid gray; /* Borda inferior com 1 pixel, solida, cinza */
+}
+
+ol li.expense{ /* Estilo da lista - Gastos */
+    border-left: 10px solid red;
+}
+
+ol li.income{ /* Estilo da lista - Ganhos */
+    border-left: 10px solid green;
+}
+
+ol li:hover{ /* Ao passar o mouse */
+    opacity: 0.8;
+}
+
+p{
+    margin: 4px 0 ; /* Margem: horizontal, vertical */
+}
