@@ -8,11 +8,21 @@ function logout(){ //Função para realizar logout do usuário
 
 findTransaction(); // Chamando a função de transação 
 
-function findTransaction(){ // Buscar as transações do backend para o usuário logado
+function findTransaction(){ // Buscar as transações do backend (FIRESTORE) para o usuário logado
+    firebase.firestore()
+        .collection('transactions')
+        .get()
+        .then(snapshot =>{ //"Fotografia" do momento atual da base de dados para consulta
+                const transactions = snapshot.docs.map(doc => doc.data());
+                addTransactionToScreen(transactions);
+        })
+}
+
+/*function findTransaction(){ // Buscar as transações fake do backend para o usuário logado
     setTimeout(() => {
         addTransactionToScreen(fakeTransations); // Adicionando transação
     }, 1000) // Carregar 1 segundo 
-}
+}*/
 
 function addTransactionToScreen(transactions){ // Função para adicionar as transações do backend
     const orderedList = document.getElementById('transactions'); // Chamando a lista ordenada do html 
@@ -56,20 +66,20 @@ function formatMoney(money){ // Formatando o dinheiro
     return `${money.currency} ${money.value.toFixed(2)}` // toFixed(2) = Insere duas casas decimais no valor
 }
 
-const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
+/*const fakeTransations = [{ // ARRAY COM INFORMAÇÕES FAKE PARA TESTE
     type: 'expense',
     date: '2023-01-04',
     money: {
-        currency: 'R$', /* Atributo moeda */ 
-        value: 10 /* Valor */
+        currency: 'R$', // Atributo moeda 
+        value: 10 // Valor
     },
     transactionType: 'Supermercado'
 }, { 
     type: 'income',
     date: '2023-01-03',
     money: {
-        currency: 'R$', /* Atributo moeda */ 
-        value: 5000 /* Valor */
+        currency: 'R$', // Atributo moeda
+        value: 5000 // Valor
     },
     transactionType: 'Salário',
     description: 'Empresa A'
@@ -77,8 +87,8 @@ const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
     type: 'expense',
     date: '2023-01-01',
     money: {
-        currency: 'EUR', /* Atributo moeda */ 
-        value: 10 /* Valor */
+        currency: 'EUR', // Atributo moeda 
+        value: 10 // Valor
     },
     transactionType: 'Transporte',
     description: 'Metro ida e volta'
@@ -86,10 +96,10 @@ const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
     type: 'expense',
     date: '2023-01-01',
     money: {
-        currency: 'USD', /* Atributo moeda */ 
-        value: 600 /* Valor */
+        currency: 'USD', // Atributo moeda
+        value: 600 // Valor
     },
     transactionType: 'Aluguel',
     description: 'Mensalidade'
 
-}]
+}]*/
