@@ -23,6 +23,7 @@ input, button{ /* Campos inserção de texto e botão */
     position: fixed;
     width: 100%;
     height: 100%;
+    top: 0;
 }
 
 .loading label{

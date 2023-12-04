@@ -6,15 +6,30 @@ function logout(){ //Função para realizar logout do usuário
     })
 }
 
-findTransaction(); // Chamando a função de transação 
+firebase.auth().onAuthStateChanged(user => {
+    if(user){
+        findTransactions(user); // Chamando a função de transação 
+    }
+})
 
-function findTransaction(){ // Buscar as transações do backend (FIRESTORE) para o usuário logado
+
+function findTransactions(user){ // Buscar as transações do backend (FIRESTORE) para o usuário logado
+    showLoading();
     firebase.firestore()
         .collection('transactions')
+        .where('user.uid', '==', user.uid)
+        .orderBy('date', 'desc')
         .get()
         .then(snapshot =>{ //"Fotografia" do momento atual da base de dados para consulta
-                const transactions = snapshot.docs.map(doc => doc.data());
-                addTransactionToScreen(transactions);
+            hideLoading();
+            const transactions = snapshot.docs.map(doc => doc.data());
+            console.log(transactions);
+            addTransactionToScreen(transactions);
+        })
+        .catch(error => {
+            hideLoading();
+            console.log(error);
+            alert('Erro ao recuperar transações');
         })
 }
 
