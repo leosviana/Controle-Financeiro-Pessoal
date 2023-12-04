@@ -22,9 +22,22 @@ function addTransactionToScreen(transactions){ // Função para adicionar as tra
         li.classList.add(transaction.type); //Adicionando tipo de transação ('expense' ou 'income')
 
         const date = document.createElement('p'); // Criando elemento paragrafo
-        date.innerHTML = transaction.date; /* Adicionando a data */
-        li.appendChild(date); /* Adicionando data como item filho da lista  */
+        date.innerHTML = formatDate(transaction.date); // Adicionando o formato data ao html
+        li.appendChild(date); // Adicionando data como item filho da lista
 
+        const money = document.createElement('p'); // Criando elemento paragrafo
+        money.innerHTML = formatMoney(transaction.money); // Adicionando o formato dinheiro ao html
+        li.appendChild(money); // Adicionando o dinheiro como item filho da lista
+
+        const type = document.createElement('p'); // Criando elemento paragrafo
+        type.innerHTML = transaction.transactionType; // Adicionando o formato tipo ao html
+        li.appendChild(type); // Adicionando o tipo como item filho da lista
+
+        if(transaction.description){
+            const description = document.createElement('p'); // Criando elemento paragrafo
+            description.innerHTML = transaction.description; // Adicionando o formato descrição ao html
+            li.appendChild(description); // Adicionando a descrição como item filho da lista
+        }
 
         orderedList.appendChild(li); // Adicionando item lista como filho da lista
     });
@@ -33,15 +46,21 @@ function addTransactionToScreen(transactions){ // Função para adicionar as tra
          let transaction = transactions[i];
        }
     */
+}
 
+function formatDate(date){ // Formatando a data para formato brasileiro
+    return new Date(date).toLocaleDateString('pt-BR');
+}
 
+function formatMoney(money){ // Formatando o dinheiro
+    return `${money.currency} ${money.value.toFixed(2)}` // toFixed(2) = Insere duas casas decimais no valor
 }
 
 const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
     type: 'expense',
     date: '2023-01-04',
     money: {
-        currenty: 'R$', /* Atributo moeda */ 
+        currency: 'R$', /* Atributo moeda */ 
         value: 10 /* Valor */
     },
     transactionType: 'Supermercado'
@@ -49,7 +68,7 @@ const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
     type: 'income',
     date: '2023-01-03',
     money: {
-        currenty: 'R$', /* Atributo moeda */ 
+        currency: 'R$', /* Atributo moeda */ 
         value: 5000 /* Valor */
     },
     transactionType: 'Salário',
@@ -58,7 +77,7 @@ const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
     type: 'expense',
     date: '2023-01-01',
     money: {
-        currenty: 'EUR', /* Atributo moeda */ 
+        currency: 'EUR', /* Atributo moeda */ 
         value: 10 /* Valor */
     },
     transactionType: 'Transporte',
@@ -67,7 +86,7 @@ const fakeTransations = [{ /* ARRAY COM INFORMAÇÕES FAKE PARA TESTE */
     type: 'expense',
     date: '2023-01-01',
     money: {
-        currenty: 'USD', /* Atributo moeda */ 
+        currency: 'USD', /* Atributo moeda */ 
         value: 600 /* Valor */
     },
     transactionType: 'Aluguel',
