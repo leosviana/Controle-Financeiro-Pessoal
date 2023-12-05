@@ -13,27 +13,51 @@
     <header>
         <button type="button" class="clear" onclick="logout()">Sair</button>
     </header>
-    <form>
-        <div class="form-field">
-            <div><label>Transação</label></div>
-            <input type="radio" name="type" id="expense" checked> <!-- "checked" indica a opção padrão selecionada -->
-            <label for="expense">Despesa</label>
-            <input type="radio" name="type" id="income">
-            <label for="income">Receita</label>
-        </div>
-        <div class="form-field">
-            <div><label>Data da transação</label></div>
-            <input type="date">
-        </div>
-        <div class="form-field">
-            <div><label>Moeda</label></div>
-            <select>
-                <option>Dólar</option>
-                <option>Euro</option>
-                <option selected>Real</option> <!-- "selected" indica a opção padrão selecionada -->
-            </select>
-        </div>
-    </form>
+    <main class="centralize">
+        <form>
+            <div class="form-field">
+                <div><label>Transação</label></div>
+                <input type="radio" name="type" id="expense" checked> <!-- "checked" indica a opção padrão selecionada -->
+                <label for="expense">Despesa</label>
+                <input type="radio" name="type" id="income">
+                <label for="income">Receita</label>
+            </div>
+            <div class="form-field">
+                <div><label>Data da transação</label></div>
+                <input type="date">
+            </div>
+            <div class="form-field">
+                <div><label>Moeda</label></div>
+                <select>
+                    <option>Dólar</option>
+                    <option>Euro</option>
+                    <option selected>Real</option> <!-- "selected" indica a opção padrão selecionada -->
+                </select>
+            </div>
+            <div class="form-field">
+                <div><label>Valor</label></div>
+                <input type="number">
+            </div>
+            <div class="form-field">
+                <div><label>Tipos de transação</label></div>
+                <select>
+                    <option>-- Selecione uma transação --</option>
+                    <option>Salário</option>
+                    <option>Acomodação</option>
+                    <option>Alimentação</option>                
+                    <option>Supermercado</option>
+                    <option>Transporte</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <div><label>Descrição</label></div>
+                <input type="text">
+            </div>
+            <button type="button" class="solid">Salvar</button>
+            <button type="button" class="clear">Cancelar</button>
+        </form>
+    </main>
 </body>
 
 <!-- Referenciando e utilizando os arquivos JAVASCRIPT -->
