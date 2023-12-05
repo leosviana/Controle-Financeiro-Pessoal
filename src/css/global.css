@@ -21,9 +21,13 @@ header button{
     margin-bottom: 10px;
 }
 
-input, button{ /* Campos inserção de texto e botão */
+input, button, select{ /* Campos inserção de texto, botão e seleção serão espandidos */
     padding: 10px;
     width: -webkit-fill-available; /* Aumentar campos para o espaço total disponível */
+}
+
+input[type="radio"]{
+    width: auto;
 }
 
 .loading{

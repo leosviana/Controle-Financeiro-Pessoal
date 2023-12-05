@@ -16,8 +16,22 @@
     <form>
         <div class="form-field">
             <div><label>Transação</label></div>
-            <input type="radio"><label>Despesa</label>
-            <input type="radio"><label>Receita</label>
+            <input type="radio" name="type" id="expense" checked> <!-- "checked" indica a opção padrão selecionada -->
+            <label for="expense">Despesa</label>
+            <input type="radio" name="type" id="income">
+            <label for="income">Receita</label>
+        </div>
+        <div class="form-field">
+            <div><label>Data da transação</label></div>
+            <input type="date">
+        </div>
+        <div class="form-field">
+            <div><label>Moeda</label></div>
+            <select>
+                <option>Dólar</option>
+                <option>Euro</option>
+                <option selected>Real</option> <!-- "selected" indica a opção padrão selecionada -->
+            </select>
         </div>
     </form>
 </body>
