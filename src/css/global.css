@@ -3,6 +3,14 @@ body{ /* Corpo da página */
     background-color: rgb(1, 110, 1);
 }
 
+header{
+    text-align: right;
+}
+
+header button{
+    width: auto;
+}
+
 .centralize{
     display: flex;
     justify-content: center;

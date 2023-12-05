@@ -12,6 +12,10 @@ firebase.auth().onAuthStateChanged(user => {
     }
 })
 
+function newTransaction(){
+    window.location.href = "transaction.html";
+}
+
 
 function findTransactions(user){ // Buscar as transações do backend (FIRESTORE) para o usuário logado
     showLoading();

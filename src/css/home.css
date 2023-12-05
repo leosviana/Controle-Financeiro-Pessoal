@@ -2,14 +2,6 @@ body{ /* Corpo da página */
     height: 100vh;
 }
 
-header{
-    text-align: right;
-}
-
-header button{
-    width: auto;
-}
-
 ol{
     list-style-type: none; /* Retirando numeração da lista */
     padding: 0; /* Sem espaçamento */
