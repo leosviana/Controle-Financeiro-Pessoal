@@ -24,24 +24,27 @@
             </div>
             <div class="form-field">
                 <div><label>Data da transação</label></div>
-                <input type="date">
+                <input type="date" onchange="onChangeDate()" id="date">
+                <div class="error" id="date-required-error">Data é obrigatória/inválida!</div>
             </div>
             <div class="form-field">
                 <div><label>Moeda</label></div>
                 <select>
-                    <option>Dólar</option>
-                    <option>Euro</option>
-                    <option selected>Real</option> <!-- "selected" indica a opção padrão selecionada -->
+                    <option value="USD">Dólar</option>
+                    <option value="EUR">Euro</option>
+                    <option VALUE="BRL" selected>Real</option> <!-- "selected" indica a opção padrão selecionada -->
                 </select>
             </div>
             <div class="form-field">
                 <div><label>Valor</label></div>
-                <input type="number">
+                <input type="number" onchange="onChangeValue()" id="value">
+                <div class="error" id="value-required-error">Valor é obrigatória!</div>
+                <div class="error" id="value-less-or-equal-to-zero-error">Valor deve ser mairo que zero!</div>
             </div>
             <div class="form-field">
                 <div><label>Tipos de transação</label></div>
-                <select>
-                    <option>-- Selecione uma transação --</option>
+                <select onchange="onChangeTransactionType()" id="transaction-type">
+                    <option value="">-- Selecione uma transação --</option>
                     <option>Salário</option>
                     <option>Acomodação</option>
                     <option>Alimentação</option>                
@@ -49,6 +52,7 @@
                     <option>Transporte</option>
                     <option>Outros</option>
                 </select>
+                <div class="error" id="transaction-required-error">Tipo de transação é obrigatória!</div>
             </div>
             <div class="form-field">
                 <div><label>Descrição</label></div>
