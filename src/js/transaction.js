@@ -41,6 +41,39 @@ function isFormValid(){
     return true;
 }
 
+function saveTransaction(){
+    showLoading();
+    const transaction = createTransaction();
+    //console.log(transaction);
+    firebase.firestore()
+        .collection('transactions')
+        .add(transaction)
+        .then(() => {
+            hideLoading();
+            window.location.href = "home.html";
+        })
+        .catch(() =>{
+            hideLoading();
+            alert('Erro ao salvar transação!');
+        })
+}
+
+function createTransaction(){
+    return {
+        type: form.typeExpense().checked ? "expense" : "income", // Se tiver marcado "despesa", envia despesa, se não envia "receita"
+        date: form.date().value,
+        money: { //Atributo - Objeto
+            currency: form.currency().value,
+            value: parseFloat(form.value().value)
+        },
+        transactionType: form.transactionType().value,
+        description: form.description().value,
+        user: {
+            uid: firebase.auth().currentUser.uid
+        }
+    }
+}
+
 const form = { //OBJETO FORM - Campos do HTML
     date: () => document.getElementById('date'),
     dateRequiredError: () => document.getElementById('date-required-error'),
@@ -49,5 +82,8 @@ const form = { //OBJETO FORM - Campos do HTML
     valueLessOrEqualToZeroError: () => document.getElementById('value-less-or-equal-to-zero-error'),
     transactionType: () => document.getElementById('transaction-type'),
     transactionTypeRequiredError: () => document.getElementById('transaction-type-required-error'),
+    typeExpense: () => document.getElementById('expense'),
+    currency: () => document.getElementById('currency'),
+    description: () => document.getElementById('description'),
     saveButton: () => document.getElementById('save-button')
 }
