@@ -26,8 +26,10 @@ function findTransactions(user){ // Buscar as transações do backend (FIRESTORE
         .get()
         .then(snapshot =>{ //"Fotografia" do momento atual da base de dados para consulta
             hideLoading();
-            const transactions = snapshot.docs.map(doc => doc.data());
-            console.log(transactions);
+            const transactions = snapshot.docs.map(doc => ({
+                ...doc.data(),
+                uid: doc.id //Adicionando o id do usuário ao final da lista
+            }));            
             addTransactionToScreen(transactions);
         })
         .catch(error => {
@@ -47,8 +49,12 @@ function addTransactionToScreen(transactions){ // Função para adicionar as tra
     const orderedList = document.getElementById('transactions'); // Chamando a lista ordenada do html 
 
     transactions.forEach(transaction => { // ARRAY de transações
+        //console.log(transactions);
         const li = document.createElement('li'); // Criando elemento 'li' (Lista)
         li.classList.add(transaction.type); //Adicionando tipo de transação ('expense' ou 'income')
+        li.addEventListener('click', () => {
+            window.location.href = "transaction.html?uid = " + transaction.uid;
+        })
 
         const date = document.createElement('p'); // Criando elemento paragrafo
         date.innerHTML = formatDate(transaction.date); // Adicionando o formato data ao html
