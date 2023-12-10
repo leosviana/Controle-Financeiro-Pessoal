@@ -1,3 +1,10 @@
+getTransactionUid();
+
+function getTransactionUid(){
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams.get('uid'));
+}
+
 function onChangeDate(){ //Função de validação da data
     const date = form.date().value; //Declarando a variavel data na função
     form.dateRequiredError().style.display = !date ? "block" : "none"; //Caso não exista a data, mostra o erro
@@ -73,6 +80,10 @@ function createTransaction(){
         }
     }
 }
+
+
+
+
 
 const form = { //OBJETO FORM - Campos do HTML
     date: () => document.getElementById('date'),
