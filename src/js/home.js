@@ -49,11 +49,11 @@ function addTransactionToScreen(transactions){ // Função para adicionar as tra
     const orderedList = document.getElementById('transactions'); // Chamando a lista ordenada do html 
 
     transactions.forEach(transaction => { // ARRAY de transações
-        //console.log(transactions);
+        console.log(transactions);
         const li = document.createElement('li'); // Criando elemento 'li' (Lista)
         li.classList.add(transaction.type); //Adicionando tipo de transação ('expense' ou 'income')
         li.addEventListener('click', () => {
-            window.location.href = "transaction.html?uid = " + transaction.uid;
+            window.location.href = "transaction.html?uid=" + transaction.uid; //Ao clicar no item da lista, será direcionado para a tela de transação para atualizar o registro. Será enviado o id do usuário também
         })
 
         const date = document.createElement('p'); // Criando elemento paragrafo
