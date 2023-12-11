@@ -29,3 +29,13 @@ ol li:hover{ /* Ao passar o mouse */
 p{
     margin: 4px 0 ; /* Margem: horizontal, vertical */
 }
+
+ol li:hover button.danger{ /* Botão deletar só vai aparecer quando passar o mouse */
+    display: block;
+}
+
+button.danger{ /* Botão deletar vai ficar escondido */
+    width: auto;
+   /* float: right;  Para direita, mas está ficando errado */
+    display: none;
+}
