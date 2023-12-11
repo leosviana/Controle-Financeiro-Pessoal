@@ -89,6 +89,11 @@ button.fab.right{
     right: 32px;
 }
 
+.outline.danger{
+    color: red;
+    border-color: red;
+}
+
 .error{ /* Erros */
     color: white;
     background: red;
